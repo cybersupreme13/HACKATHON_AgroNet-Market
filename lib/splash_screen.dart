@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 
@@ -21,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (context) => const HomeScreen(),
         ),
       );
     });
@@ -32,29 +31,21 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: TweenAnimationBuilder<double>(
-          tween: Tween<double>(begin: 0.0, end: 1.0),
-          duration: const Duration(seconds: 2),
-          builder: (context, value, child) {
-            return Opacity(
-              opacity: value,
-              child: child,
-            );
-          },
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                "assets/logo.png",
-                width: 230,
-              ),
-              const SizedBox(height: 25),
-              const CircularProgressIndicator(
-                color: Color(0xFF6B8E23),
-                strokeWidth: 3,
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/logo.png',
+              width: 300,
+            ),
+
+            const SizedBox(height: 25),
+
+            const CircularProgressIndicator(
+              color: Color(0xFF6B8E23),
+              strokeWidth: 3,
+            ),
+          ],
         ),
       ),
     );
