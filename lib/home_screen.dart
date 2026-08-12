@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'inicio_sesion.dart';
+import 'crear_cuenta.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,9 +18,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
 
-                // =========================
                 // LOGO
-                // =========================
                 const SizedBox(height: 15),
 
                 Image.asset(
@@ -27,14 +27,10 @@ class HomeScreen extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
 
-                // =========================
                 // ESPACIO
-                // =========================
                 const SizedBox(height: 20),
 
-                // =========================
                 // ESLOGAN
-                // =========================
                 const Text(
                   'Del campo a\ntu mesa',
                   textAlign: TextAlign.center,
@@ -47,9 +43,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // =========================
                 // DESCRIPCIÓN
-                // =========================
                 const SizedBox(height: 18),
 
                 const Text(
@@ -64,20 +58,21 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // =========================
                 // ESPACIO ANTES DEL BOTÓN
-                // =========================
                 const SizedBox(height: 48),
 
-                // =========================
                 // BOTÓN INICIAR SESIÓN
-                // =========================
                 SizedBox(
                   width: double.infinity,
                   height: 78,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Ir a inicio de sesión
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF7777F2),
@@ -97,14 +92,17 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // =========================
                 // CREAR CUENTA
-                // =========================
                 const SizedBox(height: 35),
 
                 TextButton(
                   onPressed: () {
-                    // Ir a crear cuenta
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CrearCuentaScreen(),
+                      ),
+                    );
                   },
                   child: const Text(
                     'Crear una nueva cuenta',
@@ -116,7 +114,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Espacio inferior para poder deslizar cómodamente
                 const SizedBox(height: 40),
               ],
             ),
